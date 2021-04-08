@@ -1,2 +1,5 @@
-# Simple and Universal CV (responsive)
-Universal CV maded in HTML &amp; CSS (mobile friednly).
+# Clean and responsive CV
+My first CV template maded only with HTML and CSS. 
+
+# Screenshot
+
