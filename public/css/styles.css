@@ -23,23 +23,24 @@ body {
 /* base styles  */
 .container {
   display: flex;
+  flex-wrap: wrap;
   height: 100%;
-  width: 850px;
-  margin: 50px auto;
-  border: 1px solid var(--border);
-  box-shadow: 1px 1px 2px var(--border);
+  width: 100%;
+  margin: 0px auto;
+  /* border: 1px solid var(--border);
+  box-shadow: 1px 1px 2px var(--border); */
   background-color: #fff;
 }
 
 .left__side {
-  width: 550px;
+  width: 100%;
   height: 100%;
   padding: 30px;
   background-color: #fff;
 }
 
 .right__side {
-  width: 300px;
+  width: 100%;
   padding: 30px;
   background-color: var(--background);
   text-align: center;
@@ -63,6 +64,7 @@ span {
   display: grid;
   grid-template-columns: min-content 1fr;
   padding: 20px;
+  padding-left: 5px;
 }
 
 .education__list i {
@@ -79,7 +81,7 @@ span {
 }
 
 .right__side img {
-  width: 230px;
+  width: 100%;
 }
 
 .right__side h3 {
@@ -88,10 +90,15 @@ span {
 }
 
 .info__panel {
+  display: inline-block;
   position: relative;
   width: 100%;
+  max-width: 350px;
+  min-width: 250px;
   height: 50px;
-  margin: 25px 0;
+  margin-top: 45px;
+  margin-bottom: 25px;
+  line-height: 50px;
   background-color: #fff;
   text-align: center;
   align-items: center;
@@ -104,11 +111,15 @@ span {
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
+  width: 10px;
   height: 50px;
   background-color: var(--secondary);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.info__panel h1 {
+  font-size: 1.4rem;
 }
 
 .avatar__name__panel {
@@ -119,29 +130,29 @@ span {
   display: block;
 }
 
-.language__panel {
-  display: block;
-}
-
 .languages {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
 }
 
 .language {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
+  justify-content: center;
 }
 
 .language span.txt {
-  margin-right: 20px;
+  margin-right: 10px;
   width: 70px;
   text-align: left;
 }
 
 .dot {
-  height: 15px;
-  width: 15px;
+  height: 13px;
+  width: 13px;
   margin: 0 10px 0 0;
   background-color: #fff;
   border-radius: 50%;
@@ -149,10 +160,102 @@ span {
 }
 
 .dot__dark {
-  height: 15px;
-  width: 15px;
+  height: 13px;
+  width: 13px;
   margin: 0 10px 0 0;
   background-color: var(--secondary);
   border-radius: 50%;
   display: inline-block;
+}
+
+.skills {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-content: center;
+}
+
+.skills span {
+  background-color: var(--border);
+  color: var(--secondary);
+  padding: 3px 10px;
+  margin-bottom: 3px;
+  margin-right: 3px;
+  border-radius: 3px;
+}
+
+/* Responsive */
+@media screen and (min-width: 455px) {
+  .right__side img {
+    width: 300px;
+  }
+
+  .skills {
+    max-width: 350px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 610px) {
+  .education__list {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .left__side {
+    width: 65%;
+    height: 100%;
+    background-color: #fff;
+  }
+
+  .right__side {
+    width: 35%;
+    background-color: var(--background);
+    text-align: center;
+  }
+  .right__side img {
+    width: 200px;
+  }
+
+  .info__panel {
+    min-width: 100px;
+    max-width: 250px;
+  }
+
+  .dot {
+    height: 8px;
+    width: 8px;
+  }
+
+  .dot__dark {
+    height: 8px;
+    width: 8px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 1024px;
+    margin: 50px auto;
+    border: 1px solid var(--border);
+    box-shadow: 1px 1px 2px var(--border);
+    background-color: #fff;
+  }
+  .dot {
+    height: 15px;
+    width: 15px;
+  }
+
+  .dot__dark {
+    height: 15px;
+    width: 15px;
+  }
+
+  .skills {
+    max-width: 250px;
+    margin: auto;
+  }
 }
